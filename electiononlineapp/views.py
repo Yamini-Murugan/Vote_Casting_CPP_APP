@@ -19,8 +19,9 @@ def home(request):
 def signup(request):
     if request.method == 'POST':
         username = request.POST['username']
-        fname = request.POST['fname']
-        lname = request.POST['lname']
+        # fname = request.POST['fname']
+        # lname = request.POST['lname']
+        
         email = request.POST['email']
         password = request.POST['password']
         password2 = request.POST['password2']
@@ -32,8 +33,6 @@ def signup(request):
             return redirect('signup')
         
         myuser = User.objects.create_user(username, email, password)
-        myuser.first_name = fname
-        myuser.last_name = lname 
         myuser.save()
         
         
