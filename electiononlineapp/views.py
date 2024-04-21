@@ -115,7 +115,7 @@ def submit_vote(request):
         position = Position.objects.get(id=position_id)
         
         # Send SNS notification
-        topicOfArn = 'arn:aws:sns:eu-west-1:250738637992:electionvoting-yamini'
+        topicOfArn = 'arn:aws:sns:eu-west-1:250738637992:vote_App_CPP:cbf1c33c-572f-4a1d-8985-34724115db35'
         subjectToSend = 'Vote Submitted'
         messageToSend = f'A vote has been submitted for a position'
         AWS_REGION = 'eu-west-1'
