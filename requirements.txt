@@ -5,3 +5,4 @@ django-request==1.6.2
 boto3
 Election-Vote==0.0.1
 psycopg2-binary==2.9.9
+student-vote==0.0.2
