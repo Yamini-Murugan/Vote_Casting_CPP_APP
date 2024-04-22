@@ -1,23 +1,11 @@
 {% extends "base.html" %}
 
 {% block login %}
-<!--Login Page for exsisting Users-->
-<div class="login-page">
-    <div class="form">
-      <h1 class="log">Login</h1>
-      <form method = "POST"class="login-form">
-        {% csrf_token %}
-        <input type="text" placeholder="Username" name= 'username'/>
-        <input type="password" placeholder="Password" name = 'password'/>
-        <button type="submit" class="btn fw-bold">Login</button>
-        <p >Not registered? <a href="{% url "signup" %}">Create an account</a></p>
-      </form>
-    </div>
-  </div>
-  <div class="col-lg-12 well">
+<!--Display user validation alerts or success messages for registered users-->
+ <div class="col-lg-6 well pt-3 mx-auto">
     <div class="row">
         {% if messages %}
-        <div class="alert alert-danger">
+        <div class="alert alert-success">
             <ul class="messages">
                 {% for message in messages %}
                 <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
@@ -27,5 +15,21 @@
         {% endif %}
     </div>
 </div>
+
+<!--Login Page for exsisting Users-->
+
+<div class="login-page">
+    <div class="form" style="border-radius:30px">
+      <h1 class="log">Login</h1>
+      <form method = "POST"class="login-form">
+        {% csrf_token %}
+        <input type="text" placeholder="Username" name= 'username'/>
+        <input type="password" placeholder="Password" name = 'password'/>
+        <button type="submit" class="btn fw-bold">Login</button>
+        <p class="pt-2" >Not registered? <a href="{% url "signup" %}">Create an account</a></p>
+      </form>
+    </div>
+  </div>
+ 
 
   {% endblock%}

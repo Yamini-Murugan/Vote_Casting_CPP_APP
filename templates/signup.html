@@ -3,13 +3,9 @@
 {% block register %}
 
 <!--Register Page for new users / students-->
-<div class="container">
-    <h1 class="well text-dark mt-2">Register Here</h1>
-	
-</div>
-
-
-				<form action=""method= "POST">
+<div class="container mt-5 mb-5 pt-3 w-50" style = "border: 2px solid #43e898; border-radius:30px">
+    <h1 class="well text-dark mt-2 text-center">Register Here</h1>
+				<form  action=""method= "POST">
                     {% csrf_token %}
                     
 					<div class="col-sm-12 ">
@@ -46,11 +42,9 @@
                                     <option value="vote_ID">Student</option>
                                 </select>
                             </div>
-
+						</div>
 						</div>
 						<button type="submit" class="btn btn-success btn-lg">Sign Up </button>
                     </form> 
-				</div>
-	</div>
 	</div>
 {% endblock %}

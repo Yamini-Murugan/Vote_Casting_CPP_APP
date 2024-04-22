@@ -115,17 +115,17 @@ def submit_vote(request):
         position = Position.objects.get(id=position_id)
         
         # Send SNS notification
-        topicOfArn = 'arn:aws:sns:eu-west-1:250738637992:vote_App_CPP'
-        subjectToSend = 'Vote Submitted'
-        messageToSend = f'A vote has been submitted for a position'
-        AWS_REGION = 'eu-west-1'
-        sns_client = boto3.client('sns', region_name=AWS_REGION)
-        response = sns_client.publish(
-            TopicArn=topicOfArn,
-            Message=messageToSend,
-            Subject=subjectToSend,
-        )
-        print(response)  # Print SNS response for debugging purposes
+        # topicOfArn = 'arn:aws:sns:eu-west-1:250738637992:vote_App_CPP'
+        # subjectToSend = 'Vote Submitted'
+        # messageToSend = f'A vote has been submitted for a position'
+        # AWS_REGION = 'eu-west-1'
+        # sns_client = boto3.client('sns', region_name=AWS_REGION)
+        # response = sns_client.publish(
+        #     TopicArn=topicOfArn,
+        #     Message=messageToSend,
+        #     Subject=subjectToSend,
+        # )
+        # print(response)  # Print SNS response for debugging purposes
 
     return redirect('home')
 def vote(request, position_id):
